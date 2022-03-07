@@ -2,17 +2,19 @@ package com.bl.bridgelabz;
 
 public class EmployeeWage {
     public static void main(String[] args) {
-        int ISPARTTIME=1;
-        int ISFULLTIME=2;
+        int isPARTTime=1;
+        int isFULLTime=2;
+        int maxRateInMonth=100;
         int empRatePerHr=20;
-        int NumOfWorkingDays=20;
-        int TotalWorkingDays=1;
-        int TotalEmpHr=0;
+        int numOfWorkingDays=20;
+        int totalWorkingDays=0;
+        int totalEmpHr=0;
         int empHrs;
 
-        while( TotalWorkingDays < NumOfWorkingDays)
+        while( totalEmpHr < maxRateInMonth
+        && totalWorkingDays < numOfWorkingDays)
         {
-            TotalWorkingDays++;
+            totalWorkingDays++;
             double num = Math.floor(Math.random() * 3);
             int x = (int) num;
             switch (x){
@@ -26,10 +28,10 @@ public class EmployeeWage {
                     empHrs = 0;
                     break;
             }
-            TotalEmpHr = TotalEmpHr + empHrs;
+            totalEmpHr = totalEmpHr + empHrs;
         }
-        int TotalSalary = TotalEmpHr * empRatePerHr;
-        System.out.println("Total wage ="+TotalSalary);
+        int totalSalary = totalEmpHr * empRatePerHr;
+        System.out.println("Total wage ="+totalSalary);
     }
 }
 
